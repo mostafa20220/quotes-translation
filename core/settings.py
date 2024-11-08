@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'modeltranslation',
     'quotes',
     'core',
     'silk',
@@ -56,12 +57,18 @@ MIDDLEWARE = [
 
 ]
 
+USE_I18N = True
+
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('en', 'English'),
     ('ar', 'Arabic'),
 ]
+
+# Specify the fallback language (optional)
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
 
 ROOT_URLCONF = 'core.urls'
 

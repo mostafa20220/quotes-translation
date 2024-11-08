@@ -6,7 +6,7 @@ from quotes.serializers import ReadQuoteSerializer
 
 class GetRandomQuote(APIView):
     def get(self, request):
-        lang = request.LANGUAGE_CODE
-        quote = Quote.objects.order_by('?').only(f'text_{lang}', f'author_{lang}').first()
+        quote = Quote.objects.order_by('?').first()
+        print("quote", quote)
         serializer = ReadQuoteSerializer(quote, context={'request': request})
         return Response(serializer.data)
